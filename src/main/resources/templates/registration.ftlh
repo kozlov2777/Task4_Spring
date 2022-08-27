@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sell</title>
+    <title>SELL</title>
 </head>
 <body>
-<h1><a href="http://localhost:8080">SELLAUTOSPRING</a></h1><br>
+<h1><a href="/">SELL</a></h1><hr>
 <h4>Регистрация</h4>
 <form action="/registration" method="post">
     Имя пользователя: <input type="text" name="name"><br><br>
