@@ -28,6 +28,29 @@ public class ProductController {
         return "products";
     }
 
+    @GetMapping("/product/findByBrand")
+    public String productByBrand(@RequestParam(name = "brand", required = false) String brand, Principal principal, Model model){
+        model.addAttribute("products", productService.productList(brand));
+        model.addAttribute("user", productService.getUserByPrincipal(principal));
+        return "products";
+    }
+
+    @GetMapping("/product/findByBrandAndModelCar")
+    public String productByBrandAndModelCar(@RequestParam(name = "brand", required = false) String brand,
+                                            @RequestParam(name = "modelCar", required = false) String modelCar,
+                                            Principal principal, Model model){
+        model.addAttribute("products", productService.listByBrandAndModel(brand, modelCar));
+        model.addAttribute("user", productService.getUserByPrincipal(principal));
+        return "products";
+    }
+
+    @GetMapping("/product/findByModel")
+    public String productByModel(@RequestParam(name = "modelCar", required = false) String modelCar, Principal principal, Model model){
+        model.addAttribute("products", productService.listByModel(modelCar));
+        model.addAttribute("user", productService.getUserByPrincipal(principal));
+        return "products";
+    }
+
     @GetMapping("/product/{id}")
     public String productInfo(@PathVariable Long id, Model model) {
         Product product = productService.getProductById(id);

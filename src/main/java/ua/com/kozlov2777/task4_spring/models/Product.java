@@ -21,6 +21,10 @@ public class Product {
     private Long id;
     @Column(name = "title")
     private String title;
+    @Column(name = "brand")
+    private String brand;
+    @Column(name = "modelCar")
+    private String modelCar;
     @Column(name = "description", columnDefinition = "text")
     private String description;
     @Column(name = "price")

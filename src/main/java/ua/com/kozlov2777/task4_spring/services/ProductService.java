@@ -25,6 +25,10 @@ public class ProductService {
         if (title != null) return productRepository.findByTitle(title);
         return productRepository.findAll();
     }
+    public List<Product> productList(String brand){
+        if (brand != null) return productRepository.findProductByBrand(brand);
+        return productRepository.findAll();
+    }
 
     public void saveProduct(Principal principal, Product product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
         product.setUser(getUserByPrincipal(principal));
@@ -71,5 +75,14 @@ public class ProductService {
 
     public Product getProductById(Long id) {
         return productRepository.findById(id).orElse(null);
+    }
+
+    public List<Product> listByModel(String modelCar) {
+        if (modelCar != null) return productRepository.findByModelCar(modelCar);
+        return productRepository.findAll();
+    }
+    public List<Product> listByBrandAndModel(String brand, String modelCar){
+        if(brand != null && modelCar != null) return productRepository.findByBrandAndModelCar(brand, modelCar);
+        return productRepository.findAll();
     }
 }
