@@ -7,7 +7,6 @@
 <h1><a href="/">SELL</a>
     <#if user.email??>
     <h3>Имя пользователя: <i>${user.name}</i></h3>
-    <h3><a href="/card">Избранное</a></h3>
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <input type="submit" value="Выйти"/>

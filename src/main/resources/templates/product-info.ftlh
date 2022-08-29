@@ -16,6 +16,5 @@
 <b>Цена: </b>${product.price}<br>
 <b>Город: </b>${product.city}<br>
 <b>Автор: </b><a href="/user/${product.user.id}">${product.user.name}</a><br>
-<h1><a href="/addProduct/${product.id}">Добавить в избранное</a> </h1>
 </body>
 </html>
