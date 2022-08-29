@@ -5,18 +5,20 @@
 </head>
 <body>
 <h1><a href="/">SELL</a>
-<#if user.email??>
+    <#if user.email??>
     <h3>Имя пользователя: <i>${user.name}</i></h3>
+    <h3><a href="/card">Избранное</a></h3>
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <input type="submit" value="Выйти"/>
     </form>
     <#if user.isAdmin()>
         <a href="/admin">Панель администратора</a>
-        </#if>
-<#else>
+    </#if>
+    <#else>
     <a href="/login">Войти</a></h1>
 </#if>
+</br>
 <a href="/registration">Зарегестрироваться</a>
 </h1><hr>
 <h4>Товары со всей Украины</h4>
@@ -67,4 +69,3 @@
     </form>
 </#if>
 </body>
-</html>

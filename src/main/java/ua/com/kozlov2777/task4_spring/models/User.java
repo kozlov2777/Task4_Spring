@@ -1,6 +1,7 @@
 package ua.com.kozlov2777.task4_spring.models;
 
 import lombok.Data;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ua.com.kozlov2777.task4_spring.models.enums.Role;

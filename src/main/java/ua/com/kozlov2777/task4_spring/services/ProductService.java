@@ -13,6 +13,7 @@ import ua.com.kozlov2777.task4_spring.repositories.UserRepository;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -84,5 +85,10 @@ public class ProductService {
     public List<Product> listByBrandAndModel(String brand, String modelCar){
         if(brand != null && modelCar != null) return productRepository.findByBrandAndModelCar(brand, modelCar);
         return productRepository.findAll();
+    }
+
+
+    public Optional<Product> findById(Long id) {
+        return productRepository.findById(id);
     }
 }
